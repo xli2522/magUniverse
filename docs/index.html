@@ -1,0 +1,223 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>magUniverse Paper Collection</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            h1 {
+                color: #333;
+                border-bottom: 2px solid #333;
+                padding-bottom: 10px;
+            }
+            .data-type {
+                margin-bottom: 30px;
+            }
+            .data-type h2 {
+                color: #2c3e50;
+                cursor: pointer;
+                padding: 10px;
+                background-color: #f5f6fa;
+                border-radius: 5px;
+            }
+            .data-type h2:hover {
+                background-color: #e8e9ec;
+            }
+            .content {
+                display: none;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #f8f9fa;
+            }
+            a {
+                color: #3498db;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .instrument {
+                color: #666;
+                font-style: italic;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>magUniverse Paper Collection</h1>
+            
+            <div class="data-type">
+                <h2 onclick="toggleContent('zeeman')">Zeeman</h2>
+                <div id="zeeman" class="content">
+                    <table>
+                        <tr>
+                            <th>Source</th>
+                            <th>Title</th>
+                            <th>Authors</th>
+                            <th>Year</th>
+                            <th>Instrument</th>
+                            <th>Links</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>Crutcher2010</td>
+                            <td>Magnetic Fields in Interstellar Clouds from Zeeman Observations: Inference of Total Field Strengths by Bayesian Analysis</td>
+                            <td>Richard M. Crutcher, Benjamin Wandelt, Carl Heiles, Edith Falgarone, and Thomas H. Troland</td>
+                            <td>2010</td>
+                            <td>Compilation of HI, OH, and CN Zeeman measurements</td>
+                            <td>
+                                
+                                <a href="https://ui.adsabs.harvard.edu/abs/2010ApJ...725..466C/abstract" target="_blank">ADS</a>
+                                
+                                
+                                
+                                 | 
+                                <a href="https://iopscience.iop.org/article/10.1088/0004-637X/725/1/466" target="_blank">Publisher</a>
+                                
+                                
+                                 | 
+                                <a href="https://doi.org/10.1088/0004-637X/725/1/466" target="_blank">DOI</a>
+                                
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            
+            <div class="data-type">
+                <h2 onclick="toggleContent('polarization')">Polarization</h2>
+                <div id="polarization" class="content">
+                    <table>
+                        <tr>
+                            <th>Source</th>
+                            <th>Title</th>
+                            <th>Authors</th>
+                            <th>Year</th>
+                            <th>Instrument</th>
+                            <th>Links</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>Dotson2010</td>
+                            <td>350 μm Polarimetry from the Caltech Submillimeter Observatory</td>
+                            <td>J. L. Dotson, J. E. Vaillancourt, L. Kirby et al.</td>
+                            <td>2010</td>
+                            <td>CSO / Hertz 350 μm polarimeter</td>
+                            <td>
+                                
+                                
+                                
+                                <a href="https://iopscience.iop.org/article/10.1088/0067-0049/186/2/406" target="_blank">Paper</a>
+                                
+                                
+                                
+                                 | 
+                                <a href="https://doi.org/10.1088/0067-0049/186/2/406" target="_blank">DOI</a>
+                                
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Matthews2009</td>
+                            <td>The Legacy of SCUPOL: 850 μm Imaging Polarimetry from 1997 to 2005</td>
+                            <td>B. C. Matthews, C. A. McPhee, L. M. Fissel, R. L. Curran</td>
+                            <td>2009</td>
+                            <td>JCMT / SCUPOL 450 μm & 850 μm</td>
+                            <td>
+                                
+                                
+                                
+                                <a href="https://iopscience.iop.org/article/10.1088/0067-0049/182/1/143" target="_blank">Paper</a>
+                                
+                                
+                                
+                                 | 
+                                <a href="https://doi.org/10.1088/0067-0049/182/1/143" target="_blank">DOI</a>
+                                
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            
+            <div class="data-type">
+                <h2 onclick="toggleContent('gas')">Gas</h2>
+                <div id="gas" class="content">
+                    <table>
+                        <tr>
+                            <th>Source</th>
+                            <th>Title</th>
+                            <th>Authors</th>
+                            <th>Year</th>
+                            <th>Instrument</th>
+                            <th>Links</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>Jijina1999</td>
+                            <td>Dense Cores Mapped in Ammonia: A Database</td>
+                            <td>J. Jijina, P. C. Myers, and Fred C. Adams</td>
+                            <td>1999</td>
+                            <td></td>
+                            <td>
+                                
+                                <a href="https://ui.adsabs.harvard.edu/abs/1999ApJS..125..161J/abstract" target="_blank">ADS</a>
+                                
+                                
+                                
+                                 | 
+                                <a href="https://iopscience.iop.org/article/10.1086/313268" target="_blank">Publisher</a>
+                                
+                                
+                                 | 
+                                <a href="https://doi.org/10.1086/313268" target="_blank">DOI</a>
+                                
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script>
+            function toggleContent(id) {
+                var content = document.getElementById(id);
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
