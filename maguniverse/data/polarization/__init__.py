@@ -28,4 +28,19 @@ polarization_sources = {
             "t6_polarization"   : "https://content.cld.iop.org/journals/0067-0049/182/1/143/revision1/apjs300733t6_mrt.txt",
         },
     },
+    "Harris2018"   : {
+        "title"    : "ALMA Observations of Polarized 872μm Dust Emission from the Protostellar Systems VLA 1623 and L1527",
+        "authors"  : "Robert J. Harris, Erin G. Cox, Leslie W. Looney, et al.",
+        "year"     : 2018,
+        "paper_link": "https://iopscience.iop.org/article/10.3847/1538-4357/aac6ec",
+        "ads"      : "https://ui.adsabs.harvard.edu/abs/2018ApJ...861...91H/abstract",
+        "doi"      : "10.3847/1538-4357/aac6ec",
+        "instrument": "ALMA Band 7",
+        "data_link" : {
+            "CDS"               : "https://simbad.cds.unistra.fr/simbad/sim-basic?Ident=2018ApJ...861...91H&submit=SIMBAD+search",
+            "t1_imaging"        : "https://iopscience.iop.org/0004-637X/861/2/91/suppdata/apjaac6ect1_ascii.txt?doi=10.3847/1538-4357/aac6ec",
+            "t2_plane_fitting"  : "https://iopscience.iop.org/0004-637X/861/2/91/suppdata/apjaac6ect2_ascii.txt?doi=10.3847/1538-4357/aac6ec",
+            "t3_polarization"   : "https://iopscience.iop.org/0004-637X/861/2/91/suppdata/apjaac6ect3_ascii.txt?doi=10.3847/1538-4357/aac6ec",
+            },
+    },
 }
