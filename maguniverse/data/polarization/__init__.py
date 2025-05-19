@@ -14,7 +14,7 @@ polarization_sources = {
             "t2_data_table_local" : "datafiles/polarization/dotson2010_t2.txt",
             },
     },
-    "Matthews2009": {
+    "Matthews2009"  : {
         "title"     : "The Legacy of SCUPOL: 850 μm Imaging Polarimetry from 1997 to 2005",
         "authors"   : "B. C. Matthews, C. A. McPhee, L. M. Fissel, R. L. Curran",
         "year"      : 2009,
@@ -42,5 +42,5 @@ polarization_sources = {
             "t2_plane_fitting"  : "https://iopscience.iop.org/0004-637X/861/2/91/suppdata/apjaac6ect2_ascii.txt?doi=10.3847/1538-4357/aac6ec",
             "t3_polarization"   : "https://iopscience.iop.org/0004-637X/861/2/91/suppdata/apjaac6ect3_ascii.txt?doi=10.3847/1538-4357/aac6ec",
             },
-    },
+    }
 }
