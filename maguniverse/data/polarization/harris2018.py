@@ -68,7 +68,7 @@ def _get_table_config(table):
                 "Object",       # Source name
                 "RA",           # Right Ascension (J2000)
                 "Dec",          # Declination (J2000)
-                "Ellipse Size", # Ellipse size (arcsec)
+                "Ellipse Size", # Ellipse size (miliarcsec)
                 "PA",           # Position angle (degrees)
                 "I_peak",       # Peak intensity (mJy/beam)
                 "I_int",        # Integrated intensity (mJy)
@@ -114,7 +114,7 @@ def get_harris2018(file_path=None, file_url=None, save_path=None,
             Object      : Source name
             RA          : Right Ascension (J2000)
             Dec         : Declination (J2000)
-            Ellipse Size: Ellipse size (arcsec)
+            Ellipse Size: Ellipse size (miliarcsec)
             PA          : Position angle (degrees)
             I_peak      : Peak intensity (mJy/beam)
             I_int       : Integrated intensity (mJy)
