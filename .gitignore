@@ -3,6 +3,8 @@ __pycache__
 *.egg-info
 *.egg
 *.pyc
+build/
+dist/
 
 # development files
 datafiles/
