@@ -5,9 +5,11 @@ on:
     branches:
       - main
     paths:
-      # detect changes in data __init__.py files
+      # detect changes in files
       - 'maguniverse/data/**/__init__.py'
-      
+      - 'maguniverse/data/**/sources.py'
+
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
