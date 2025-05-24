@@ -1,3 +1,8 @@
+from maguniverse.data.zeeman.crutcher2010 import get_crutcher2010
+
+__all__ = [ "zeeman_sources",
+            "get_crutcher2010"]
+
 zeeman_sources = {
     "Crutcher2010": {
         "title"     : "Magnetic Fields in Interstellar Clouds from Zeeman Observations: Inference of Total Field Strengths by Bayesian Analysis",

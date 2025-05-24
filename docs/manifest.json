@@ -1,0 +1,10 @@
+{
+  "zeeman_sources": "maguniverse.data.zeeman.__init__:zeeman_sources",
+  "polarization_sources": "maguniverse.data.polarization.__init__:polarization_sources",
+  "gas_sources": "maguniverse.data.gas.__init__:gas_sources",
+  "get_jijina1999": "maguniverse.data.gas.__init__:get_jijina1999",
+  "get_dotson2010": "maguniverse.data.polarization.__init__:get_dotson2010",
+  "get_matthews2009": "maguniverse.data.polarization.__init__:get_matthews2009",
+  "get_harris2018": "maguniverse.data.polarization.__init__:get_harris2018",
+  "get_crutcher2010": "maguniverse.data.zeeman.__init__:get_crutcher2010"
+}
