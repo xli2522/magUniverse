@@ -1,10 +1,11 @@
-name: Update magUniverse Paper Collection HTML
+name: Update manifest JSON and magUniverse Paper Collection HTML
 
 on:
   push:
     branches:
       - main
     paths:
+      # detect changes in data __init__.py files
       - 'maguniverse/data/**/__init__.py'
 
 jobs:
@@ -15,10 +16,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          fetch-depth: 0
-          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -26,20 +23,21 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -e .
+        run: pip install -e .
+      
+      # generate manifest.json before index.html
+      - name: Generate manifest
+        run:  python maguniverse/utils/generate_manifest.py
 
       - name: Generate documentation
-        run: |
-          python maguniverse/utils/docs_out.py
+        run:  python maguniverse/utils/docs_out.py
 
       - name: Commit & push changes if docs changed
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Ensure we're on main and in sync
           git checkout main
@@ -48,13 +46,9 @@ jobs:
 
           # Stage changes
           git add docs/index.html
+          git add docs/manifest.json
           
           # Only commit and push if there are changes
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Auto-update documentation"
-          git push origin main
+          git diff --quiet || git commit -m "chore: update index.html; getter manifest"
+          git push
           
