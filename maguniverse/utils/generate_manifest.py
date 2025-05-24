@@ -21,7 +21,7 @@ from pathlib import Path
 
 def main():
     # Root directory of the repository (assumes this script lives at project root)
-    # two parents up from examples/generate_manifest.py
+    # two parents up from utils/generate_manifest.py
     root = Path(__file__).parent.parent.resolve()   
     data_dir = root / 'maguniverse' / 'data'
     manifest = {}
