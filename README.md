@@ -32,6 +32,10 @@ After installation, go through the examples in [notebooks\00_quickstart.ipynb](h
 
 ```
 magUniverse-master
+├── .github/workflows          # Github workflow files
+│   ├── update_index.yml       # Auto update manifest and magUniverse Paper Collection Website
+│   └── deploy_gh_pages.yml    # Auto deploy magUniverse Paper Collection Website
+│
 │── maguniverse/
 │   ├── data/                  # Get raw data and convert to tidy CSV, TXT, … 
 │   │   ├── polarization/      # CSO, JCMT, ALMA, Planck, …
@@ -40,7 +44,7 @@ magUniverse-master
 │   │   └── gas/               # NRAO, Haystack, Effelsberg, …
 │   │
 │   ├── utils/                 # Python helpers
-│   │   └── fetch_ascii.py      # Scripts to fetch raw ascii data from online repositories
+│   │   └── fetch_ascii.py     # Scripts to fetch raw ascii data from online repositories
 │   │
 │   └── datafiles/             # User copy of data
 │
@@ -48,12 +52,16 @@ magUniverse-master
 │   └── 00_quickstart.ipynb    # 15‑min tour of the toolbox
 │
 ├── docs/                      # Longer‑form docs & rendered HTML
+│   ├── manifest.json/         # JSON of magUniverse metadata and getter methods
 │   └── index.html
 │
-├── tests/                     # Unit tests for parsers
 ├── examples/                  # Mini‑projects / tutorials
+│   └── generate_manifest.py   # Manifest of all magUniverse getter methods
+│
+├── tests/                     # Unit tests for parsers
 ├── requirements.txt           # Lists the Python dependencies for the project
 ├── CONTRIBUTING.md            # How to add code or docs
 ├── LICENSE                    # MIT
+├── setup.py                   # Allow pip-install via ZIP
 └── README.md                  # ← you are here
 ```
