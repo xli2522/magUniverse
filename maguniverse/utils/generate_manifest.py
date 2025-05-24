@@ -23,7 +23,7 @@ def main():
     # Root directory of the repository (assumes this script lives at project root)
     # two parents up from utils/generate_manifest.py
     root = Path(__file__).parent.parent.resolve()   
-    data_dir = root / 'maguniverse' / 'data'
+    data_dir = root / 'data'
     manifest = {}
 
     # Recursively find every __init__.py under maguniverse/data
@@ -50,7 +50,7 @@ def main():
                                     manifest[func_name] = f"{module_path}:{func_name}"
 
     # Write out the manifest.json in the project root
-    manifest_path = root / 'docs' / 'manifest.json'
+    manifest_path = root.parent / 'docs' / 'manifest.json'
     manifest_path.write_text(json.dumps(manifest, indent=2))
     print(f"Generated manifest with {len(manifest)} entries at {manifest_path}")
 
