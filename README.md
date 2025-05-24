@@ -33,7 +33,7 @@ After installation, go through the examples in [notebooks\00_quickstart.ipynb](h
 ```
 magUniverse-master
 ├── .github/workflows          # Github workflow files
-│   ├── update_index.yml       # Auto update manifest and magUniverse Paper Collection Website
+│   ├── main.yml               # Auto update manifest and magUniverse Paper Collection Website
 │   └── deploy_gh_pages.yml    # Auto deploy magUniverse Paper Collection Website
 │
 │── maguniverse/

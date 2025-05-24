@@ -1,6 +1,4 @@
 import os
-import importlib
-import pkgutil
 from maguniverse.data.zeeman import zeeman_sources
 from maguniverse.data.polarization import polarization_sources
 from maguniverse.data.gas import gas_sources
