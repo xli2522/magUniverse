@@ -175,7 +175,7 @@ if __name__ == "__main__":
     src_data_path = os.path.join(
         __parent_dir__, 'datafiles/polarization/harris2018_t3.txt'
     )
-    df_pol = get_harris2018(file_url=polarization_sources['Harris2018']['data_link']['t2_plane_fitting'], 
+    df_pol = get_harris2018(file_url=polarization_sources['Harris2018']['data_link']['t3_polarization'], 
                             save_path=output_path, 
                             table='t3')
     print("Polarization data:")
