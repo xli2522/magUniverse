@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'index.html'   # don’t trigger if the only file changed is index.html
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,12 +41,20 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      # upload  the built wheel as the Pages artifact
-      - name: Upload wheel artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
+      - name: Copy wheel into docs/
+        run: mv dist/magUniverse-latest.whl docs/magUniverse-latest.whl
+    
 
-      # publish to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - name: Commit & push changes if docs changed
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Stage changes
+          git add docs/magUniverse-latest.whl
+          
+          git diff --staged --name-only
+          git commit -m "chore: CI update magUniverse-latest.whl"
+          git push origin main
