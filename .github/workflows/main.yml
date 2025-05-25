@@ -24,6 +24,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Fetch all history for all branches and tags
+      
+      - name: Fetch main branch
+        run: git fetch origin main
+
+      - name: Check for differences
+        run: |
+          # Check if there are changes in the docs directory
+          if git diff --exit-code origin/main; then
+            echo "no_diff=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_diff=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -52,7 +64,7 @@ jobs:
           git add docs/index.html
           git add docs/manifest.json
           
-          # Only commit and push if there are changes
-          git diff --quiet || git commit -m "chore: update index.html; getter manifest"
-          git push
+          git diff --staged --name-only
+          git commit -m "chore: update index.html; getter manifest"
+          git push origin main
           
