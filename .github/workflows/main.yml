@@ -63,7 +63,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Copy wheel into docs/
-        run: mv dist/magUniverse-latest-py3-none-any.whll docs/magUniverse-latest-py3-none-any.whl
+        run: mv dist/magUniverse-latest-py3-none-any.whl docs/magUniverse-latest-py3-none-any.whl
     
       - name: Commit & push changes if docs changed
         env:
