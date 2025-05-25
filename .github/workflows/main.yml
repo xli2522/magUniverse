@@ -1,4 +1,4 @@
-name: Update manifest JSON and magUniverse Paper Collection HTML
+name: Update manifest, magUniverse Paper Collection Website and Services
 
 on:
   push:
@@ -6,8 +6,9 @@ on:
       - main
     paths:
       # detect changes in files
-      - 'maguniverse/data/**/__init__.py'
-      - 'maguniverse/data/**/sources.py'
+      - 'maguniverse/data/**/__init__.py'     # detect changes in data getters
+      - 'maguniverse/data/**/sources.py'      # detect changes in data sources
+      - 'maguniverse/service/**'              # detect changes in service getters
 
 
   # Allows you to run this workflow manually from the Actions tab
@@ -30,10 +31,11 @@ jobs:
       - name: Install dependencies
         run: pip install -e .
       
-      # generate manifest.json before index.html
+      # generate manifest.json for collection of getters
       - name: Generate manifest
         run:  python maguniverse/utils/generate_manifest.py
-
+      
+      # generate index.html for collection of getters
       - name: Generate documentation
         run:  python maguniverse/utils/docs_out.py
 

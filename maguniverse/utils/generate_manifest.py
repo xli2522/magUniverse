@@ -19,12 +19,29 @@ import ast
 import json
 from pathlib import Path
 
+def parse_getters_class(service_path):
+    """Parse the getters class from service/get.py and return its methods."""
+    source = service_path.read_text(encoding='utf-8')
+    tree = ast.parse(source, filename=str(service_path))
+    
+    getter_methods = {}
+    for node in tree.body:
+        if isinstance(node, ast.ClassDef) and node.name == 'getters':
+            for method in node.body:
+                if isinstance(method, ast.FunctionDef) and method.name not in ['__init__']:
+                    getter_methods[method.name] = f"maguniverse.service.get:{method.name}"
+    
+    return getter_methods
+
 def main():
     # Root directory of the repository (assumes this script lives at project root)
     # two parents up from utils/generate_manifest.py
     root = Path(__file__).parent.parent.resolve()   
     data_dir = root / 'data'
+    
     manifest = {}
+    manifest['main data getters'] = {}
+    manifest['preset getters'] = {}
 
     # Recursively find every __init__.py under maguniverse/data
     for init_path in data_dir.rglob('__init__.py'):
@@ -47,7 +64,13 @@ def main():
                                 if isinstance(elt, ast.Constant) and isinstance(elt.value, str):
                                     func_name = elt.value
                                     # Map function name to module:function
-                                    manifest[func_name] = f"{module_path}:{func_name}"
+                                    manifest['main data getters'][func_name] = f"{module_path}:{func_name}"
+
+    # Add getter methods from service/get.py
+    service_path = root / 'service' / 'get.py'
+    if service_path.exists():
+        getter_methods = parse_getters_class(service_path)
+        manifest['preset getters'].update(getter_methods)
 
     # Write out the manifest.json in the project root
     manifest_path = root.parent / 'docs' / 'manifest.json'
