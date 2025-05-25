@@ -1,10 +1,20 @@
 {
-  "zeeman_sources": "data.zeeman.__init__:zeeman_sources",
-  "polarization_sources": "data.polarization.__init__:polarization_sources",
-  "gas_sources": "data.gas.__init__:gas_sources",
-  "get_jijina1999": "data.gas.__init__:get_jijina1999",
-  "get_dotson2010": "data.polarization.__init__:get_dotson2010",
-  "get_matthews2009": "data.polarization.__init__:get_matthews2009",
-  "get_harris2018": "data.polarization.__init__:get_harris2018",
-  "get_crutcher2010": "data.zeeman.__init__:get_crutcher2010"
+  "main data getters": {
+    "zeeman_sources": "data.zeeman.__init__:zeeman_sources",
+    "polarization_sources": "data.polarization.__init__:polarization_sources",
+    "gas_sources": "data.gas.__init__:gas_sources",
+    "get_dotson2010": "data.polarization.__init__:get_dotson2010",
+    "get_matthews2009": "data.polarization.__init__:get_matthews2009",
+    "get_harris2018": "data.polarization.__init__:get_harris2018",
+    "get_crutcher2010": "data.zeeman.__init__:get_crutcher2010",
+    "get_jijina1999": "data.gas.__init__:get_jijina1999"
+  },
+  "preset getters": {
+    "dotson2010_t2": "maguniverse.service.get:dotson2010_t2",
+    "harris2018_t2": "maguniverse.service.get:harris2018_t2",
+    "harris2018_t3": "maguniverse.service.get:harris2018_t3",
+    "matthews2009_t6": "maguniverse.service.get:matthews2009_t6",
+    "crutcher2010_t1": "maguniverse.service.get:crutcher2010_t1",
+    "jijina1999_t2": "maguniverse.service.get:jijina1999_t2"
+  }
 }
