@@ -28,7 +28,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install build tool
-        run: pip install build
+        run: pip install build setuptools wheel
 
       - name: Build wheel
         run: |
