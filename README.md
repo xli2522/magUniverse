@@ -12,12 +12,22 @@ A **Python‑based data manager** for working with tabulated data from publicati
 * Serve as a lightweight, community‑maintained magnetic-field-in-the-universe research knowledge base.
 
 ---
+## Download all the Data You Want In Your Browser
+magUniverse now offers [browser-based data downloads](https://xli2522.github.io/magUniverse/) powered by [Pyodide](https://pyodide.org/en/stable/index.html). This eliminates the need for local Python installation or environment setup.
+
+### Technical Details
+* WebAssembly Python through Pyodide
+* Automatic magUniverse installation via Pypi or the latest CI build wheel
+* Direct file downloads inside your browser
+
+---
 ## Quick Start Notebook
 github installation of magUniverse is available:
 
 |                             **Logo**                              | **Platform** |                                    **Command**                                    |
 |:-----------------------------------------------------------------:|:------------:|:---------------------------------------------------------------------------------:|
 |     ![GitHub logo](https://simpleicons.org/icons/github.svg)      |    GitHub    | ``python -m pip install https://github.com/xli2522/magUniverse/archive/refs/heads/main.zip`` |
+|     ![Pypi logo](https://pypi.org/static/images/logo-small.8998e9d1.svg)      |    Pypi    | ``python pip install maguniverse`` |
 
 Or setup the development repo via setup.py
 ```bash
@@ -33,7 +43,8 @@ After installation, go through the examples in [notebooks\00_quickstart.ipynb](h
 ```
 magUniverse-master
 ├── .github/workflows          # Github workflow files
-│   ├── main.yml               # Auto update manifest and magUniverse Paper Collection Website
+│   ├── main.yml               # Auto update manifest, CI build, and magUniverse Paper Collection Website
+│   ├── python-publish.yml     # Auto publish to Pypi on release
 │   └── deploy_gh_pages.yml    # Auto deploy magUniverse Paper Collection Website
 │
 │── maguniverse/
@@ -44,7 +55,11 @@ magUniverse-master
 │   │   └── gas/               # NRAO, Haystack, Effelsberg, …
 │   │
 │   ├── utils/                 # Python helpers
-│   │   └── fetch_ascii.py     # Scripts to fetch raw ascii data from online repositories
+│   │   ├── fetch_ascii.py     # Scripts to fetch raw ascii data from online repositories
+│   │   └── ...                # other advanced tools
+│   │
+│   ├── service/               # Simplified minimalistic data table methods
+│   │   └── get.py             # Minimalistic data table getters (wrappers of data/**/getters)
 │   │
 │   └── datafiles/             # User copy of data
 │
@@ -53,7 +68,8 @@ magUniverse-master
 │
 ├── docs/                      # Longer‑form docs & rendered HTML
 │   ├── manifest.json/         # JSON of magUniverse metadata and getter methods
-│   └── index.html
+│   ├── docs/**.whl            # CI build latest wheel
+│   └── index.html             # Main magUniverse website
 │
 ├── examples/                  # Mini‑projects / tutorials
 │   └── generate_manifest.py   # Manifest of all magUniverse getter methods

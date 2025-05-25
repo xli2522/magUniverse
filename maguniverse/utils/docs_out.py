@@ -240,6 +240,37 @@ def generate_html():
                 font-size: 18px;
                 color: #856404;
             }
+            .feature-intro {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 30px;
+                border: 1px solid #e9ecef;
+            }
+            .feature-intro h2 {
+                color: #2c3e50;
+                margin-top: 0;
+            }
+            .feature-intro h3 {
+                color: #2c3e50;
+                font-size: 1.1em;
+                margin: 15px 0 10px 0;
+            }
+            .feature-intro ul {
+                margin: 10px 0;
+                padding-left: 20px;
+            }
+            .feature-intro li {
+                margin: 5px 0;
+            }
+            .feature-intro .note {
+                background: #fff3cd;
+                border: 1px solid #ffeeba;
+                color: #856404;
+                padding: 10px;
+                border-radius: 4px;
+                margin-top: 15px;
+            }
         </style>
     </head>
     <body>
@@ -265,6 +296,19 @@ def generate_html():
         </div>
         <div class="container">
             <h1>magUniverse Paper Collection</h1>
+            
+            <div class="feature-intro">
+                <h2>Download Data Directly in Your Browser</h2>
+                <p>
+                    magUniverse now offers browser-based data downloads powered by <a href="https://pyodide.org" target="_blank">Pyodide</a>. 
+                    This eliminates the need for local Python installation or environment setup.
+                </p>
+                <div class="note">
+                    <strong>Note:</strong> Due to browser security restrictions and CAPTCHA requirements, some data sources may require manual download from their providers. 
+                    Find links to the original data providers in our <a href="https://github.com/xli2522/magUniverse" target="_blank">GitHub repository</a>.
+                </div>
+            </div>
+
             {% for data_type, sources in data_types.items() %}
             <div class="data-type">
                 <h2 onclick="toggleContent('{{ data_type }}')">{{ data_type.replace('_', ' ').title() }}</h2>
