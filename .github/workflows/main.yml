@@ -5,11 +5,7 @@ on:
     branches:
       - main
     paths:
-      # detect changes in files
-      - 'maguniverse/data/**/__init__.py'     # detect changes in data getters
-      - 'maguniverse/data/**/sources.py'      # detect changes in data sources
-      - 'maguniverse/service/**'              # detect changes in service getters
-
+      - 'maguniverse/**'  # detect changes in maguniverse directory only
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -53,16 +49,31 @@ jobs:
       - name: Generate documentation
         run:  python maguniverse/utils/docs_out.py
 
+      # build and publish the wheel to docs/
+      - name: Install build tool
+        run: pip install build setuptools wheel
+
+      - name: Build wheel
+        run: |
+          python -m build --wheel --no-isolation
+
+          mv dist/*.whl dist/magUniverse-latest-py3-none-any.whl
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Copy wheel into docs/
+        run: mv dist/magUniverse-latest-py3-none-any.whll docs/magUniverse-latest-py3-none-any.whl
+    
       - name: Commit & push changes if docs changed
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PRIVATEKEY }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Stage changes
-          git add docs/index.html
-          git add docs/manifest.json
+          git add .
           
           git diff --staged --name-only
           git commit -m "chore: update index.html; getter manifest"
