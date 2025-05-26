@@ -66,11 +66,11 @@ jobs:
           mv dist/*.whl docs/
 
           # get the wheel file path
-          WHEEL_PATH=$(ls dist/*.whl | head -n1)
+          WHEEL_PATH=$(ls docs/*.whl | head -n1)
 
           # get the wheel file name
           WHEEL_FILE=$(basename "$WHEEL_PATH")
-          
+
           echo "$WHEEL_FILE" > docs/latest_wheel.txt
 
       - name: Commit & push changes if docs changed
