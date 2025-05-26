@@ -57,13 +57,15 @@ jobs:
         run: |
           python -m build --wheel --no-isolation
 
-          mv dist/*.whl dist/magUniverse-latest-py3-none-any.whl
+          WHEEL_FILE=$(ls dist/*.whl | head -n1)
+
+          echo "$WHEEL_FILE" > latest_wheel.txt
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
       - name: Copy wheel into docs/
-        run: mv dist/magUniverse-latest-py3-none-any.whl docs/magUniverse-latest-py3-none-any.whl
+        run: mv dist/*.whl docs/
     
       - name: Commit & push changes if docs changed
         env:
