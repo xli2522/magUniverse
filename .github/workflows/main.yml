@@ -57,9 +57,9 @@ jobs:
         run: |
           python -m build --wheel --no-isolation
 
-          WHEEL_FILE=$(ls dist/*.whl | head -n1)
+          WHEEL_FILE=$(ls *.whl | head -n1)
 
-          echo "$WHEEL_FILE" > latest_wheel.txt
+          echo "$WHEEL_FILE" > docs/latest_wheel.txt
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
