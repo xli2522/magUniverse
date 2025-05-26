@@ -526,12 +526,30 @@
                     
                     statusEl.textContent = 'Installing micropip...';
                     await pyodide.loadPackage("micropip");
-                    
-                    statusEl.textContent = 'Installing magUniverse...';
+
+                    statusEl.textContent = 'Installing requests...';
                     await pyodide.runPythonAsync(`
                         import micropip
-                        await micropip.install('magUniverse')
+                        await micropip.install('requests')
                     `);
+
+                    statusEl.textContent = 'Getting the latest magUniverse wheel...';
+                    const magUniverse_version = await pyodide.runPythonAsync(`
+                        import requests
+                        response = requests.get('https://xli2522.github.io/magUniverse/latest_wheel.txt')
+                        if response.status_code == 200:
+                            magUniverse_version = response.text
+                            print(f"Latest magUniverse version: {magUniverse_version}")
+                        else:
+                            print(f"Latest wheel request failed with status code {response.status_code}")
+                            print("Using the latest pypi version")
+                            magUniverse_version = 'magUniverse'
+
+                        import micropip
+                        await micropip.install('https://xli2522.github.io/magUniverse/' + f'{magUniverse_version}')
+                        magUniverse_version
+                    `);
+                    console.log(`Installed ${magUniverse_version}...`);
 
                     statusEl.textContent = 'Creating user_data directory...';
                     await pyodide.runPythonAsync(`
