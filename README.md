@@ -1,3 +1,8 @@
+[![Deploy magUniverse Page](https://github.com/xli2522/magUniverse/actions/workflows/deploy_gh_pages.yml/badge.svg)](https://github.com/xli2522/magUniverse/actions/workflows/deploy_gh_pages.yml) 
+[![CI Build Wheel, Manifest, Website, and Services](https://github.com/xli2522/magUniverse/actions/workflows/main.yml/badge.svg)](https://github.com/xli2522/magUniverse/actions/workflows/main.yml)
+[![Pypi Release](https://github.com/xli2522/magUniverse/actions/workflows/python-publish.yml/badge.svg)](https://github.com/xli2522/magUniverse/actions/workflows/python-publish.yml)
+[![PyPI version](https://badge.fury.io/py/magUniverse.svg)](https://badge.fury.io/py/magUniverse)
+
 # Magnetic Field in the Universe
 
 A **Python‑based data manager** for working with tabulated data from publications of observational surveys of cosmic magnetic fields. Instead of hosting large data files, this repo gives you the **scripts, parsers, and notebooks** you need to download, standardize, and compare datasets from the literature (dust polarimetry, Zeeman splitting, Faraday rotation, and more).
