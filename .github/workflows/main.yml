@@ -57,16 +57,22 @@ jobs:
         run: |
           python -m build --wheel --no-isolation
 
-          WHEEL_FILE=$(ls *.whl | head -n1)
-
-          echo "$WHEEL_FILE" > docs/latest_wheel.txt
-
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Copy wheel into docs/
-        run: mv dist/*.whl docs/
-    
+      - name: Move wheel into docs/ and log
+        run: |
+          # move the wheel into docs/
+          mv dist/*.whl docs/
+
+          # get the wheel file path
+          WHEEL_PATH=$(ls dist/*.whl | head -n1)
+
+          # get the wheel file name
+          WHEEL_FILE=$(basename "$WHEEL_PATH")
+          
+          echo "$WHEEL_FILE" > docs/latest_wheel.txt
+
       - name: Commit & push changes if docs changed
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATEKEY }}
