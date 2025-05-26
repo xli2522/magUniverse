@@ -1,4 +1,4 @@
-name: Update manifest, magUniverse Paper Collection Website and Services
+name: CI Build Wheel, Manifest, Website, and Services
 
 on:
   push:

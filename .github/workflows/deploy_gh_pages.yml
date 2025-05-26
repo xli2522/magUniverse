@@ -1,4 +1,4 @@
-name: Deploy magUniverse Paper Collection to GitHub Pages
+name: Deploy magUniverse Page
 
 on:
   push:
