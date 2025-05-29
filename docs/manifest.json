@@ -10,6 +10,8 @@
     "get_jijina1999": "data.gas.__init__:get_jijina1999"
   },
   "preset getters": {
+    "configure_proxies": "maguniverse.service.get:configure_proxies",
+    "_try_with_proxy_fallback": "maguniverse.service.get:_try_with_proxy_fallback",
     "dotson2010_t2": "maguniverse.service.get:dotson2010_t2",
     "harris2018_t2": "maguniverse.service.get:harris2018_t2",
     "harris2018_t3": "maguniverse.service.get:harris2018_t3",
