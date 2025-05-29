@@ -9,6 +9,7 @@ dist/
 # development files
 datafiles/
 dev_tools/
+user_data/
 
 # tools
 .qodo
