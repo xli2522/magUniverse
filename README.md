@@ -60,7 +60,7 @@ magUniverse-master
 │   │   └── gas/               # NRAO, Haystack, Effelsberg, …
 │   │
 │   ├── utils/                 # Python helpers
-│   │   ├── fetch_ascii.py     # Scripts to fetch raw ascii data from online repositories
+│   │   ├── fetch_ascii.py     # Scripts to fetch raw ASCII data from online repositories
 │   │   └── ...                # other advanced tools
 │   │
 │   ├── service/               # Simplified minimalistic data table methods
@@ -73,7 +73,8 @@ magUniverse-master
 │
 ├── docs/                      # Longer‑form docs & rendered HTML
 │   ├── manifest.json/         # JSON of magUniverse metadata and getter methods
-│   ├── docs/**.whl            # CI build latest wheel
+│   ├── **.whl                 # CI build latest wheel
+│   ├── latest_wheel.txt       # text file containing the full name of the latest wheel
 │   └── index.html             # Main magUniverse website
 │
 ├── examples/                  # Mini‑projects / tutorials
