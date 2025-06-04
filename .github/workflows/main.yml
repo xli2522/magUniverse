@@ -62,6 +62,9 @@ jobs:
 
       - name: Move wheel into docs/ and log
         run: |
+          # remove existing wheel files in docs/
+          rm -f docs/*.whl
+
           # move the wheel into docs/
           mv dist/*.whl docs/
 
