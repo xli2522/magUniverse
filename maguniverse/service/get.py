@@ -6,19 +6,22 @@ from maguniverse.data import (zeeman_sources, polarization_sources, gas_sources)
 # Note: lazy import data getters
 
 class getters():
-    def __init__(self, env='others') -> None:
+    def __init__(self, env='others', datafile_path=None) -> None:
                     # Define multiple proxy options for fallback
         self.proxy_options = [
             # "",  # Direct access (no proxy)
-            "https://api.allorigins.win/raw?url=",  # Current proxy (still working)
-            "https://cors.bridged.cc/",  # CORS bridged
-            "https://cors.x2u.in/",  # India
+            # "https://api.allorigins.win/raw?url=", 
+            # "https://cors.bridged.cc/",  # CORS bridged
+            # "https://cors.x2u.in/",  # India
             "https://api.codetabs.com/v1/proxy?quest=",
         ]
         if env == 'pyodide':
             self.session_dir = 'user_data/'
         else:
-            self.session_dir = 'datafiles/'
+            self.session_dir = datafile_path if datafile_path is not None else 'datafiles/'
+            import os
+            os.makedirs(self.session_dir, exist_ok=True)
+
 
         # Set up logging for debugging proxy attempts
         self.logger = logging.getLogger(__name__)
