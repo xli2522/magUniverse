@@ -3,11 +3,7 @@ import inspect
 import logging
 import pandas as pd
 from maguniverse.data import (zeeman_sources, polarization_sources, gas_sources)
-from maguniverse.data.polarization  import (get_dotson2010,
-                                            get_harris2018,
-                                            get_matthews2009,)
-from maguniverse.data.zeeman        import (get_crutcher2010,)
-from maguniverse.data.gas           import (get_jijina1999, )
+# Note: lazy import data getters
 
 class getters():
     def __init__(self, env='others') -> None:
@@ -109,6 +105,7 @@ class getters():
         raise Exception(error_msg)
 
     def dotson2010_t2(self) -> pd.DataFrame: 
+        from maguniverse.data.polarization  import get_dotson2010
         return self._try_with_proxy_fallback(
             data_fetcher=get_dotson2010,
             data_source=polarization_sources['Dotson2010'],
@@ -117,6 +114,7 @@ class getters():
         )
     
     def harris2018_t2(self) -> pd.DataFrame: 
+        from maguniverse.data.polarization  import get_harris2018
         return self._try_with_proxy_fallback(
             data_fetcher=get_harris2018,
             data_source=polarization_sources['Harris2018'],
@@ -126,6 +124,7 @@ class getters():
         )
     
     def harris2018_t3(self) -> pd.DataFrame: 
+        from maguniverse.data.polarization  import get_harris2018
         return self._try_with_proxy_fallback(
             data_fetcher=get_harris2018,
             data_source=polarization_sources['Harris2018'],
@@ -135,6 +134,7 @@ class getters():
         )
     
     def matthews2009_t6(self) -> pd.DataFrame: 
+        from maguniverse.data.polarization  import get_matthews2009
         return self._try_with_proxy_fallback(
             data_fetcher=get_matthews2009,
             data_source=polarization_sources['Matthews2009'],
@@ -143,6 +143,7 @@ class getters():
         )
     
     def crutcher2010_t1(self) -> pd.DataFrame: 
+        from maguniverse.data.zeeman  import get_crutcher2010
         return self._try_with_proxy_fallback(
             data_fetcher=get_crutcher2010,
             data_source=zeeman_sources['Crutcher2010'],
@@ -151,6 +152,7 @@ class getters():
         )
     
     def jijina1999_t2(self) -> pd.DataFrame: 
+        from maguniverse.data.gas  import get_jijina1999
         return self._try_with_proxy_fallback(
             data_fetcher=get_jijina1999,
             data_source=gas_sources['Jijina1999'],
