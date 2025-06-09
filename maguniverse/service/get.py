@@ -112,6 +112,15 @@ class getters():
         self.logger.error(error_msg)
         raise Exception(error_msg)
 
+    def dotson2010_t1(self) -> pd.DataFrame: 
+        from maguniverse.data.polarization  import get_dotson2010
+        return self._try_with_proxy_fallback(
+            data_fetcher=get_dotson2010,
+            data_source=polarization_sources['Dotson2010'],
+            table_key='t1_object_list_ascii',
+            save_path=self.session_dir+inspect.stack()[0][3]+'.txt'
+        )
+    
     def dotson2010_t2(self) -> pd.DataFrame: 
         from maguniverse.data.polarization  import get_dotson2010
         return self._try_with_proxy_fallback(
