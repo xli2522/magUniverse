@@ -243,6 +243,7 @@ def get_dotson2010(file_path=None, file_url=None, save_path=None,
             skipfooter=config['skip_footer'],
             engine='python'     # Required for skipfooter
         )
+        df['ID'] = df['ID'].str.replace('_', ' ')
 
     # Save processed data if requested
     if save_path:
