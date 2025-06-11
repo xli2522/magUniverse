@@ -67,7 +67,7 @@ def _get_table_config(table):
                 'Previously Published'
             ],
             'skip_rows': 6,
-            'skip_footer': 9, 
+            'skip_footer': 7, 
             'data_key_local': 't1_object_list_local',
             'data_key_ascii': 't1_object_list_ascii'
         }
