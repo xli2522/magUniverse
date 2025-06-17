@@ -5,7 +5,7 @@
 
 # Magnetic Field in the Universe
 
-A **Python‑based data manager** for working with tabulated data from publications of observational surveys of cosmic magnetic fields. Instead of hosting large data files, this repo gives you the **scripts, parsers, and notebooks** you need to download, standardize, and compare datasets from the literature (dust polarimetry, Zeeman splitting, Faraday rotation, and more).
+A Python‑based data manager for working with **tabulated data from publications** of observational surveys of cosmic magnetic fields. Instead of hosting large data files, this repo gives you the scripts, parsers, and notebooks you need to download, standardize, and compare datasets from the literature (dust polarimetry, Zeeman splitting, Faraday rotation, and more). If you are looking for general astrophysical data on particular objects, [Astroquery](https://astroquery.readthedocs.io/en/latest/)'s [VizieR](https://astroquery.readthedocs.io/en/latest/vizier/vizier.html) is a much more comprehensive module for that purpose.
 
 ---
 
