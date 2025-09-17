@@ -6,4 +6,5 @@ __all__ = [
     "zeeman_sources",
     "polarization_sources",
     "gas_sources",
+    "processed_data_tables",
 ]

@@ -3,6 +3,7 @@ import inspect
 import logging
 import pandas as pd
 from maguniverse.data import (zeeman_sources, polarization_sources, gas_sources)
+from maguniverse.data.processed import processed_data_tables
 # Note: lazy import data getters
 
 class getters():
@@ -174,6 +175,15 @@ class getters():
             data_fetcher=get_jijina1999,
             data_source=gas_sources['Jijina1999'],
             table_key='t2_gas_properties',
+            save_path=self.session_dir+inspect.stack()[0][3]+'.txt'
+        )
+
+    def liu2022_t1(self) -> pd.DataFrame: 
+        from maguniverse.data.processed import get_liu2022
+        return self._try_with_proxy_fallback(
+            data_fetcher=get_liu2022,
+            data_source=processed_data_tables['Liu2022'],
+            table_key='t1_data_table_ascii',
             save_path=self.session_dir+inspect.stack()[0][3]+'.txt'
         )
 
