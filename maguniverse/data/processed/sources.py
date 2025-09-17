@@ -3,6 +3,7 @@ processed_data_tables = {
         "title"     : "Magnetic Fields in Star Formation: A Complete Compilation of All the DCF Estimations",
         "authors"   : "Junhao Liu (刘峻豪),Keping Qiu,and Qizhou Zhang",
         "year"      : 2022,
+        "instrument": "",
         "paper_link": "https://iopscience.iop.org/article/10.3847/1538-4357/ac3911",
         "doi"       : "10.3847/1538-4357/ac3911",
         "data_link" : {

@@ -3,6 +3,7 @@ import json
 from maguniverse.data.zeeman import zeeman_sources
 from maguniverse.data.polarization import polarization_sources
 from maguniverse.data.gas import gas_sources
+from maguniverse.data.processed import processed_data_tables
 from maguniverse.service.get import getters
 from jinja2 import Environment, FileSystemLoader
 
@@ -11,7 +12,8 @@ def get_all_data():
     return {
         'zeeman': zeeman_sources,
         'polarization': polarization_sources,
-        'gas': gas_sources
+        'gas': gas_sources,
+        'processed': processed_data_tables
     }
 
 def get_available_tables():
